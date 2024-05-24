@@ -2,12 +2,16 @@
 
 int main() {
     int choice;
+    int totalPrice = 0;
+    int largePrice = 3500;
+    int mediumPrice = 2800;
+    int smallPrice = 2000;
 
     while (1) {
         printf("Enter the number for pizza size:\n");
-        printf("1 - Large pizza\n");
-        printf("2 - Medium pizza\n");
-        printf("3 - Small pizza\n");
+        printf("1 - Large pizza (3500)\n");
+        printf("2 - Medium pizza (2800)\n");
+        printf("3 - Small pizza (2000)\n");
         printf("-1 - Exit\n");
         scanf("%d", &choice);
 
@@ -19,11 +23,25 @@ int main() {
             break;
         }
 
-        // Code for processing the chosen pizza size goes here
-        // ...
+        switch (choice) {
+            case 1:
+                totalPrice += largePrice;
+                printf("Large pizza selected.\n");
+                break;
+            case 2:
+                totalPrice += mediumPrice;
+                printf("Medium pizza selected.\n");
+                break;
+            case 3:
+                totalPrice += smallPrice;
+                printf("Small pizza selected.\n");
+                break;
+        }
 
-        printf("Pizza size %d selected.\n", choice);
+        printf("Current total price: %d\n", totalPrice);
     }
+
+    printf("Final total price: %d\n", totalPrice);
 
     return 0;
 }
